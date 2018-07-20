@@ -56,7 +56,7 @@ class Lifx extends Component {
       <a href="#" onClick={this.toggleLight}>
         <div className="small-box" id="Lifx">
           <i className="far fa-lightbulb fa-10x" />
-          {console.log(this.state.toggle)}
+          <h3>{this.props.room + " " + this.props.id}</h3>
         </div>
       </a>
     );
