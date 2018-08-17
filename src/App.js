@@ -5,31 +5,42 @@ import Spotify from './components/Spotify.js';
 import Lifx from './components/Lifx.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      kitchen_one: process.env.REACT_APP_KITCHEN_ONE,
+      kitchen_two: process.env.REACT_APPKITCHEN_TWO,
+      living_room_one: process.env.REACT_APP_LIVING_ROOM_ONE,
+      living_room_two: process.env.REACT_APP_LIVING_ROOM_TWO
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <Grid>
           <Row>
-            <Col xs={6}>
+            <Col xs={12}>
               <Row>
                 <Col xs={12}>
                   <Spotify />
                 </Col>
               </Row>
             </Col>
-            <Col xs={6}>
+            <Col xs={12} md={6}>
               <Row>
                 <Col xs={6}>
-                  <Lifx light_id={'d073d5223590'} id={1} room={'Kitchen'}/>
+                  <Lifx light_id={this.state.kitchen_one} id={1} room={'Kitchen'}/>
                 </Col>
                 <Col xs={6}>
-                  <Lifx light_id={'d073d5225b74'} id={2} room={'Kitchen'}/>
+                  <Lifx light_id={this.state.kitchen_two} id={2} room={'Kitchen'}/>
                 </Col>
                 <Col xs={6}>
-                  <Lifx light_id={'d073d525f46c'} id={1} room={'Living Room'}/>
+                  <Lifx light_id={this.state.living_room_one} id={1} room={'Living Room'}/>
                 </Col>
                 <Col xs={6}>
-                  <Lifx light_id={'d073d52732af'} id={2} room={'Living Room'}/>
+                  <Lifx light_id={this.state.living_room_two} id={2} room={'Living Room'}/>
                 </Col>
               </Row>
             </Col>

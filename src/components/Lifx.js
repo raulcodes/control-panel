@@ -44,19 +44,16 @@ class Lifx extends Component {
       },
       body: data,
     }).then((response) => {
-      console.log(response.text());
-      console.log('before: '+ this.state.toggle);
       this.setState({ toggle: !this.state.toggle });
-      console.log('after: ' + this.state.toggle);
     });
   }
 
   render() {
     return (
       <a href="#" onClick={this.toggleLight}>
-        <div className="small-box" id="Lifx">
-          <i className="far fa-lightbulb fa-10x" />
-          <h3>{this.props.room + " " + this.props.id}</h3>
+        <div className={this.props.classId + " small-box"} id="Lifx">
+          {/* <i className="far fa-lightbulb fa-10x" /> */}
+          {/* <h3>{this.props.room + " " + this.props.id}</h3> */}
         </div>
       </a>
     );
