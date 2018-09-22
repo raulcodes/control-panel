@@ -1,52 +1,30 @@
 import React, { Component } from 'react';
-import { Row, Col, Grid } from 'react-bootstrap';
 import './App.css';
-import Spotify from './components/Spotify.js';
-import Lifx from './components/Lifx.js';
+import './styles/Hamburger.css';
+import Hamburger from './components/Hamburger.js';
+import Greeting from './components/Greeting.js';
+import Lights from './components/Lights.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      kitchen_one: process.env.REACT_APP_KITCHEN_ONE,
-      kitchen_two: process.env.REACT_APPKITCHEN_TWO,
-      living_room_one: process.env.REACT_APP_LIVING_ROOM_ONE,
-      living_room_two: process.env.REACT_APP_LIVING_ROOM_TWO
-    }
-  }
-
   render() {
     return (
-      <div className="App">
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <Row>
-                <Col xs={12}>
-                  <Spotify />
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={12} md={6}>
-              <Row>
-                <Col xs={6}>
-                  <Lifx light_id={this.state.kitchen_one} id={1} room={'Kitchen'}/>
-                </Col>
-                <Col xs={6}>
-                  <Lifx light_id={this.state.kitchen_two} id={2} room={'Kitchen'}/>
-                </Col>
-                <Col xs={6}>
-                  <Lifx light_id={this.state.living_room_one} id={1} room={'Living Room'}/>
-                </Col>
-                <Col xs={6}>
-                  <Lifx light_id={this.state.living_room_two} id={2} room={'Living Room'}/>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
+      <Router>
+        <div className="App" id="outer-container">
+          <Hamburger pageWrapId={"menu-wrap"} outerContainerId={ "outer-container" } />
+          <div id="menu-wrap" className="content">
+            <Switch>
+              <Route exact path="/" render={() => <Greeting name="Raul"/>} />
+              <Route path="/lights" component={Lights} />
+              {/* <Route path="/tv" component={} */}
+            </Switch>
+          </div>
+        </div>
+      </Router>
     );
   }
 }

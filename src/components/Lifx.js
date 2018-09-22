@@ -7,12 +7,14 @@ class Lifx extends Component {
 
     this.state = {
       toggle: true,
-      active: ''
+      active: 'loading...'
     }
 
     this.toggleLight = this.toggleLight.bind(this);
+  }
 
-    let url = "https://api.lifx.com/v1/lights/" + this.props.light_id
+  componentDidMount() {
+    let url = "https://api.lifx.com/v1/lights/" + this.props.lightId
     fetch(url, {
       method: "GET",
       credentials: "include",
@@ -22,15 +24,12 @@ class Lifx extends Component {
       }
     }).then((response) => {
       console.log(response.json());
-      this.state.toggle = (response.power === 'on') ? true : false;
-      this.state.active = response.connected;
+      this.setState({ active: response.connected, toggle: (response.power === 'on') ? true : false });
     });
   }
 
-
-
   toggleLight() {
-    let url = "https://api.lifx.com/v1/lights/" + this.props.light_id + "/state";
+    let url = "https://api.lifx.com/v1/lights/" + this.props.lightId + "/state";
     var data = JSON.stringify({
       "power": (this.state.toggle) ? "off" : "on"
     });
@@ -50,12 +49,12 @@ class Lifx extends Component {
 
   render() {
     return (
-      <a href="#" onClick={this.toggleLight}>
+      <div onClick={this.toggleLight}>
         <div className={this.props.classId + " small-box"} id="Lifx">
-          {/* <i className="far fa-lightbulb fa-10x" /> */}
-          {/* <h3>{this.props.room + " " + this.props.id}</h3> */}
+          <p>Lights</p>
+          <h3>{this.state.active}</h3>
         </div>
-      </a>
+      </div>
     );
   }
 }

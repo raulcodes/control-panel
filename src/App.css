@@ -1,49 +1,14 @@
-.App {
-  text-align: center;
-  color: #EEEEEE;
+.category-section {
+  height: 20vh;
+  width: 90%;
+  margin: 0 auto;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-column-gap: 20px; */
 }
 
-.small-box {
-  width: 9%;
-  height: 55px;
-  /* padding-bottom: 60%; */
-  padding: 20px;
-  border-radius: 5px;
-  margin: 10px;
-  /* background-color: #333257; */
-}
-
-.kitchen-one {
-  position: absolute;
-  top: 67%;
-  left: 49%;
-}
-
-.kitchen-two {
-  position: absolute;
-  top: 67%;
-  left: 40%;
-}
-
-.living-room-one {
-  position: absolute;
-  top: 4%;
-  left: 27%;
-}
-
-.living-room-two {
-  position: absolute;
-  top: 24%;
-  left: 27%;
-}
-
-.large-box {
-  position: relative;
-  width: 100%;
-  padding-bottom: 95%;
-  border-radius: 5px;
-  margin: 10px;
-  background-image: url("./images/smart_apartment.png");
-  background-position: center;
-  background-size: cover;
+.content {
+  width: 75%;
+  padding-top: 15vh;
+  margin: 0 auto;
 }

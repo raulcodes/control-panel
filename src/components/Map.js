@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Lifx from './Lifx.js';
 
-class Spotify extends Component {
+class Map extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class Spotify extends Component {
 
   render() {
     return (
-      <div className="large-box" id="Spotify">
+      <div className="large-box" id="Map">
         <Lifx light_id={this.state.kitchen_one} id={1} classId={'kitchen-one'} room={'Kitchen'}/>
         <Lifx light_id={this.state.kitchen_two} id={2} classId={'kitchen-two'} room={'Kitchen'}/>
         <Lifx light_id={this.state.living_room_one} id={1} classId={'living-room-one'} room={'Living Room'}/>
@@ -25,4 +25,4 @@ class Spotify extends Component {
   }
 }
 
-export default Spotify;
+export default Map;
