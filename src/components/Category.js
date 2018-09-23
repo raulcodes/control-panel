@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import Lights from './Lights.js';
 import '../styles/Category.css';
 
 class Category extends Component {

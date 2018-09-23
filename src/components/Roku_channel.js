@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Roku_channel.css'
 // import { Row, Col, Grid } from 'react-bootstrap';
 
 class Channel extends Component {
@@ -24,7 +25,8 @@ class Channel extends Component {
 
   render() {
     return (
-      <div className="channel_btn" onClick={this.handleChannelClick}>
+      <div className="channel-btn" onClick={this.handleChannelClick}>
+        <h1>Hello World</h1>
         {this.props.name}
       </div>
     );
