@@ -8,7 +8,7 @@ class Lights extends Component {
 
     this.state = {
       kitchen_one: process.env.REACT_APP_KITCHEN_ONE,
-      kitchen_two: process.env.REACT_APPKITCHEN_TWO,
+      kitchen_two: process.env.REACT_APP_KITCHEN_TWO,
       living_room_one: process.env.REACT_APP_LIVING_ROOM_ONE,
       living_room_two: process.env.REACT_APP_LIVING_ROOM_TWO,
     }

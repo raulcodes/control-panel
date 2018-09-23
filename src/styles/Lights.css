@@ -3,3 +3,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
 }
+
+@media only screen and (min-width: 768px) {
+  .light-grid {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

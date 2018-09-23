@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Circle } from 'rc-progress';
 import '../styles/Lifx.css';
 
 class Lifx extends Component {
@@ -6,8 +7,10 @@ class Lifx extends Component {
     super(props);
 
     this.state = {
-      toggle: true,
-      active: 'loading...'
+      toggle: false,
+      active: 'loading...',
+      brightness: 0.0,
+      label: ''
     }
 
     this.toggleLight = this.toggleLight.bind(this);
@@ -22,9 +25,13 @@ class Lifx extends Component {
         "Authorization": "Bearer " + process.env.REACT_APP_LIFX_SECRET,
         "Content-Type": "application/json",
       }
-    }).then((response) => {
-      console.log(response.json());
-      this.setState({ active: response.connected, toggle: (response.power === 'on') ? true : false });
+    }).then((response) => response.json())
+      .then((data) => {
+      this.setState({ active: data[0].connected,
+        toggle: (data[0].power === 'on') ? true : false,
+        brightness: data[0].brightness,
+        label: data[0].label });
+      console.log(data[0].power)
     });
   }
 
@@ -49,10 +56,14 @@ class Lifx extends Component {
 
   render() {
     return (
-      <div onClick={this.toggleLight}>
-        <div className={this.props.classId + " small-box"} id="Lifx">
-          <p>Lights</p>
-          <h3>{this.state.active}</h3>
+      <div className={this.props.classId + " small-box"} id="Lifx" onClick={this.toggleLight}>
+        <div className="light-content-container">
+          <div className="light-content">
+            <Circle percent={Math.floor(this.state.brightness*100)} strokeWidth="10" strokeColor="#D3D3D3"
+              trailWidth="0" id="light-brightness-chart" />
+            <h3 id="light-status">{this.state.toggle ? 'On' : 'Off'}</h3>
+            {/* <h3>{this.state.label}</h3> */}
+          </div>
         </div>
       </div>
     );
