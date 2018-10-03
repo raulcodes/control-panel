@@ -61,7 +61,7 @@ class Lifx extends Component {
           <div className="light-content">
             <Circle percent={Math.floor(this.state.brightness*100)} strokeWidth="10" strokeColor="#D3D3D3"
               trailWidth="0" id="light-brightness-chart" />
-            <h3 id="light-status">{this.state.toggle ? 'On' : 'Off'}</h3>
+            <h2 id="light-status">{this.state.toggle ? 'On' : 'Off'}</h2>
             {/* <h3>{this.state.label}</h3> */}
           </div>
         </div>

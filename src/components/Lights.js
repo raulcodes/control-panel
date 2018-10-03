@@ -17,20 +17,14 @@ class Lights extends Component {
 
   render() {
     return(
-      <Fragment>
       <div className="light-grid">
         <Lifx lightId={this.state.kitchen_one} />
         <Lifx lightId={this.state.kitchen_two} />
-      </div>
-      <div className="light-grid">
         <Lifx lightId={this.state.living_room_one} />
         <Lifx lightId={this.state.living_room_two} />
-      </div>
-      <div className="light-grid">
         <LifxMode mode={'tyler'} />
         <LifxMode mode={'home'} />
       </div>
-      </Fragment>
     );
   }
 }
