@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Lifx from './Lifx.js';
+import LifxMode from './LifxMode.js';
 import '../styles/Lights.css'
 
 class Lights extends Component {
@@ -24,6 +25,10 @@ class Lights extends Component {
       <div className="light-grid">
         <Lifx lightId={this.state.living_room_one} />
         <Lifx lightId={this.state.living_room_two} />
+      </div>
+      <div className="light-grid">
+        <LifxMode mode={'tyler'} />
+        <LifxMode mode={'home'} />
       </div>
       </Fragment>
     );
