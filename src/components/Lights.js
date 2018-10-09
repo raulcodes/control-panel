@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Lifx from './Lifx.js';
 import LifxMode from './LifxMode.js';
 import '../styles/Lights.css'

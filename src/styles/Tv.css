@@ -1,7 +1,21 @@
 .tv-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 10vw);
   grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.tv-grid:before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.tv-grid > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
 }
 
 @media only screen and (min-width: 768px) {
