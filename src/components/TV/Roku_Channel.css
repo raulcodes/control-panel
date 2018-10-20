@@ -1,4 +1,4 @@
-.channel-btn {
+.channel_btn {
   text-align: center;
   width: 100%;
   height: 20vw;
@@ -7,11 +7,11 @@
   border-color: #eec302;
 }
 
-.channel-btn:active {
+.channel_btn:active {
   background-color: #eec302;
 }
 
-.channel-btn i {
+.channel_btn i {
   font-size: 3.5rem;
   color: #eec302;
   line-height: 20vw;

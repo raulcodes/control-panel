@@ -1,4 +1,4 @@
-.small-box {
+.small_box {
   margin-bottom: 10px;
   height: 20vw;
   /* margin-top: 10px; */
@@ -7,16 +7,16 @@
   border-color: #eec302;
 }
 
-.small-box:active {
+.small_box:active {
   background-color: #eec302;
 }
 
-.light-content-container {
+.light_content_container {
   width: 100%;
   height: 100%;
 }
 
-.light-content {
+.light_content {
   height: 100%;
   width: 100%;
   padding: 10px;
@@ -24,18 +24,18 @@
   position: relative;
 }
 
-#light-status {
+.light_status {
   color: #c5c5c5;
   left: 50%;
   top: 40%;
 }
 
-#light-brightness-chart {
+.light_brightness_chart {
   top: 10%;
 }
 
-#light-brightness-chart,
-#light-status {
+.light_brightness_chart,
+.light_status {
   position: absolute;
   margin: 0 auto;
   width: 100%;

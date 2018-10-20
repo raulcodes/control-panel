@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { push as Menu } from 'react-burger-menu'
-import Category from './Category.js';
 import { Link } from 'react-router-dom'
-
+import Category from '../Category/Category.js';
+import styles from './styles.js';
 
 class Hamburger extends Component {
   render () {
     return (
-      <Menu pageWrapId={this.props.pageWrapId} outerContainerId={this.props.outerContainerId}>
+      <Menu styles={styles} pageWrapId={this.props.pageWrapId} outerContainerId={this.props.outerContainerId}>
         <Link to="/lights">
           <Category name="lights" />
         </Link>

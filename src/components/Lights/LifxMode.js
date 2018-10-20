@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Circle } from 'rc-progress';
-import '../styles/Lifx.css';
+import styles from './Lifx.css';
 
 class LifxMode extends Component {
   constructor(props) {
@@ -61,11 +61,11 @@ class LifxMode extends Component {
 
   render() {
     return(
-      <div className={this.props.classId + " small-box"} id="Lifx" onClick={this.lightColorChange}>
-        <div className="light-content-container">
-          <div className="light-content">
+      <div className={styles.small_box} onClick={this.lightColorChange}>
+        <div className={styles.light_content_container}>
+          <div className={styles.light_content}>
             <Circle percent={Math.floor(this.state.brightness*100)} strokeWidth="10" strokeColor="#D3D3D3"
-              trailWidth="0" id="light-brightness-chart" />
+              trailWidth="0" className={styles.light_brightness_chart} />
             {/* <h3 id="light-status">{this.state.toggle ? 'On' : 'Off'}</h3> */}
             <h3>{this.props.mode}</h3>
           </div>

@@ -1,12 +1,12 @@
-.tv-grid {
+.light_grid {
   display: grid;
-  grid-template-columns: repeat(3, 20vw);
+  grid-template-columns: repeat(2, 20vw);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: center;
 }
 
-.tv-grid:before {
+.light_grid:before {
   content: '';
   width: 0;
   padding-bottom: 100%;
@@ -14,7 +14,7 @@
   grid-column: 1 / 1;
 }
 
-.tv-grid > *:first-child {
+.light_grid > *:first-child {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
 }

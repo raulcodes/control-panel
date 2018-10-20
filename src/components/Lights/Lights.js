@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Lifx from './Lifx.js';
 import LifxMode from './LifxMode.js';
-import '../styles/Lights.css'
+import styles from './Lights.css'
 
 class Lights extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Lights extends Component {
 
   render() {
     return(
-      <div className="light-grid">
+      <div className={styles.light_grid}>
         <Lifx lightId={this.state.kitchen_one} />
         <Lifx lightId={this.state.kitchen_two} />
         <Lifx lightId={this.state.living_room_one} />

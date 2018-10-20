@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Channel from './Roku_channel.js'
+import Channel from './Roku_Channel.js'
 import RemoteButton from './Remote_Button.js'
-import '../styles/Tv.css'
+import styles from './Tv.css'
 
 const buttons = [
   { name: 'Back', icon: 'arrow-left' },
@@ -24,7 +24,7 @@ const channels = [
 class Tv extends Component {
   render() {
     return(
-      <div className="tv-grid">
+      <div className={styles.tv_grid}>
         {buttons.map(btn => {
           return <RemoteButton name={btn.name} icon={btn.icon} />
         })}

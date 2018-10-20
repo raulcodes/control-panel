@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/Roku_channel.css'
-// import { Row, Col, Grid } from 'react-bootstrap';
+import styles from './Roku_Channel.css'
 
-class RemoteButton extends Component {
+class Channel extends Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +13,7 @@ class RemoteButton extends Component {
   }
 
   handleChannelClick() {
-    let url = 'http://' + this.state.roku_ip + '/keypress/' + this.props.name
+    let url = 'http://' + this.state.roku_ip + '/launch/' + this.props.channelId
 
     fetch(url, {
       method: 'POST',
@@ -25,13 +24,12 @@ class RemoteButton extends Component {
   }
 
   render() {
-    return(
-      <div className="channel-btn" onClick={this.handleChannelClick}>
-        <i className={"fa fa-" + this.props.icon}></i>
+    return (
+      <div className={styles.channel_btn} onClick={this.handleChannelClick}>
+        {/* <i className={"fa fa-" + this.props.name}></i> */}
       </div>
     );
   }
-
 }
 
-export default RemoteButton;
+export default Channel;
