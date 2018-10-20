@@ -4,9 +4,15 @@ import RemoteButton from './Remote_Button.js'
 import '../styles/Tv.css'
 
 const buttons = [
-  'Back', 'Up', 'Home',
-  'Left', 'Select', 'Right',
-  'InstantReplay', 'Down', 'Info',
+  { name: 'Back', icon: 'arrow-left' },
+  { name: 'Up', icon: 'chevron-up' },
+  { name: 'Home', icon: 'home' },
+  { name: 'Left', icon: 'chevron-left' },
+  { name: 'Select', icon: 'circle' },
+  { name: 'Right', icon: 'chevron-right' },
+  { name: 'InstantReplay', icon: 'undo' },
+  { name: 'Down', icon: 'chevron-down' },
+  { name: 'Info', icon: 'star' }
 ]
 
 const channels = [
@@ -20,7 +26,7 @@ class Tv extends Component {
     return(
       <div className="tv-grid">
         {buttons.map(btn => {
-          return <RemoteButton name={btn} />
+          return <RemoteButton name={btn.name} icon={btn.icon} />
         })}
         {channels.map(c => {
           return <Channel name={c.name} channelId={c.id} />

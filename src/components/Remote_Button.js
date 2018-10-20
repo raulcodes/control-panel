@@ -27,7 +27,7 @@ class RemoteButton extends Component {
   render() {
     return(
       <div className="channel-btn" onClick={this.handleChannelClick}>
-        <h2>{this.props.name}</h2>
+        <i className={"fa fa-" + this.props.icon}></i>
       </div>
     );
   }

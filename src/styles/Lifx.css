@@ -1,8 +1,14 @@
 .small-box {
   margin-bottom: 10px;
+  height: 20vw;
   /* margin-top: 10px; */
   border-radius: 50%;
-  background-color: #373a47;
+  border-style: solid;
+  border-color: #eec302;
+}
+
+.small-box:active {
+  background-color: #eec302;
 }
 
 .light-content-container {

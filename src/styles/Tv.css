@@ -1,8 +1,9 @@
 .tv-grid {
   display: grid;
-  grid-template-columns: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 20vw);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  justify-content: center;
 }
 
 .tv-grid:before {
@@ -16,11 +17,4 @@
 .tv-grid > *:first-child {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
-}
-
-@media only screen and (min-width: 768px) {
-  .tv-grid {
-    width: 50%;
-    margin: 0 auto;
-  }
 }
