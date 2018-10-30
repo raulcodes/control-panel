@@ -54,7 +54,7 @@ class LifxMode extends Component {
       },
       body: data,
     }).then((response) => {
-      console.log(response);
+      // console.log(response);
       // this.setState({ toggle: !this.state.toggle });
     });
   }
