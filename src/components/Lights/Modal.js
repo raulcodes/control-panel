@@ -34,7 +34,7 @@ class LightModal extends Component {
     return(
       <Modal show={this.props.show} onHide={this.props.hideModal} className={styles.modal}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.id}</Modal.Title>
+            <Modal.Title>{this.props.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Switch onChange={() => {this.props.toggleLight(this.props.toggle, this.props.id)}} checked={this.props.toggle} />
