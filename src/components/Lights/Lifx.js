@@ -4,10 +4,6 @@ import { Circle } from 'rc-progress';
 import styles from './Lifx.css';
 
 class Lifx extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.loadLight()
   }
